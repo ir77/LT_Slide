@@ -1,0 +1,123 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<title>Ttile</title>
+<script>
+var gid = function(id){return document.getElementById(id)}
+var c_page = 0;
+var takahashi = function(){
+	var output = gid('result');
+	var page = gid('src_code').value.split("----");
+	if(!page[c_page]){
+		c_page = page.length-1;
+	}
+	gid("page_navi").innerHTML = (c_page+1) + "/" + page.length;
+	with(output.style){
+		fontSize = "10px";
+		display  = "inline";
+	}
+	output.innerHTML = page[c_page].
+		replace(/^[\r\n]+/g,"").replace(/[\r\n]+$/g,"").replace(/(\r\n|[\r\n])/g,"<br />");
+	var body_w = document.body.offsetWidth;
+	var body_h = document.body.offsetHeight;
+	var output_w = output.offsetWidth;
+	var new_fs = Math.ceil((body_w/output_w) * 8);
+	if(new_fs > 10000){return}
+	with(output.style){
+		fontSize = new_fs + "px";
+		display  = "block";
+	}
+	var output_h = output.offsetHeight;
+	if(output_h > body_h){
+		var new_fs = Math.ceil((body_h/output_h) * new_fs * 0.8);
+		with(output.style){
+			fontSize = new_fs + "px";
+			fontWeight = "bold"; 
+		}
+	}
+}
+var f = function(){
+	c_page++;
+	takahashi();
+}
+var b = function(){
+	c_page--;
+	if(c_page < 0){c_page = 0}
+	takahashi();
+}
+function keyPress(e) {
+	if(e.charCode==102){
+		f();
+	}else{
+		b();
+	}
+}
+document.addEventListener("keypress",keyPress,false);
+if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || 		navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+	 document.addEventListener("click",f,false);
+}
+
+</script>
+<style  type="text/css">
+@font-face {
+font-family: myfont;
+src: url(http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-black.ttf);
+}
+</style>
+</head>
+<body style="height:90%">
+<textarea style="visibility: hidden; width: 1px; height: 1px; " rows="3" cols="80" id="src_code">
+"f"を
+タイプ
+----
+次へ
+----
+他のキー
+で戻る
+----
+各ページは
+ハイフンx4で
+区切れ
+----
+<font color="chocolate">文字色</font>
+変えれる
+----
+画像もimg
+でひける
+----
+文字が多い程フォントが小さくなる
+----
+よ
+----
+改行
+
+も効く
+----
+web
+フォント
+対応
+----
+高橋
+メソッド
+に便利
+----
+ソースに
+文書けば
+すぐできる
+----
+詳しくは
+ソース
+読めれ
+----
+お
+わ
+り
+</textarea>
+<span id="page_navi"></span>
+<center>
+<div style="font-size: 20px; font-family:myfont; font-weight:900; display: block;" id="result"></div>
+</center>
+
+<script>
+takahashi();
+</script>
+</body></html>
