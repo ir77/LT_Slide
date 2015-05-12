@@ -1,0 +1,138 @@
+@charset "Shift_JIS";
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is the Takahashi-Method-based Presentation Tool in XUL.
+ *
+ * The Initial Developer of the Original Code is SHIMODA Hiroshi.
+ * Portions created by the Initial Developer are Copyright (C) 2005
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s): SHIMODA Hiroshi <piro.outsider.reflex@gmail.com>
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+#canvas {
+	background: white !important;
+	color: black !important;
+	font-family:
+		"ƒSƒVƒbƒNMB101U"
+		"ƒjƒ…[ƒZƒUƒ“ƒk-EB"
+		"ƒZƒUƒ“ƒk-EB"
+		"‚c‚g‚o‹É‘¾ƒSƒVƒbƒN‘Ì"
+		"‚c‚e‚o‹É‘¾ƒSƒVƒbƒN‘Ì"
+		"DHPGothic UB"
+		"DFPGothic UB"
+		"‚c‚g‚o“Á‘¾ƒSƒVƒbƒN‘Ì"
+		"‚c‚e‚o“Á‘¾ƒSƒVƒbƒN‘Ì"
+		"DHPGothic EB"
+		"DFPGothic EB"
+		"ƒZƒCƒrƒCƒTƒ‰ƒSUB-P"
+		"AR PƒSƒVƒbƒN‘Ì S"
+		"Arphic PGothic SuperBold JIS"
+/*		"Arial Black"*/
+		"‚c‚e“Á‘¾ƒSƒVƒbƒN‘Ì"
+		"DFGothic EB"
+		"ƒZƒCƒrƒCƒTƒ‰ƒSUB"
+		"AR ƒSƒVƒbƒN‘Ì S"
+		"Arphic Gothic SuperBold JIS"
+		"HGP‘n‰pŠpºŞ¼¯¸UB"
+		"HGPSoeiKakugothicUB"
+		"HGS‘n‰pŠpºŞ¼¯¸UB"
+		"HG‘n‰pŠpºŞ¼¯¸UB"
+		"HGSoeiKakugothicUB"
+		"¬’ËƒSƒVƒbƒN Std H"
+		"ƒ‚ƒgƒ„ƒSƒVƒbƒN 6"
+		sans-serif !important;
+}
+#canvas * {
+	cursor: pointer !important;
+}
+#canvas image {
+	width: auto;
+	height: auto;
+}
+.link-text {
+	color: blue !important;
+	text-decoration: underline !important;
+}
+.link-text:hover {
+	color: #3366FF !important;
+}
+.link-text:active {
+	color: red !important;
+}
+#canvas[rendering="true"] image {
+	display: none;
+}
+#canvas[rendering="true"] *,
+#canvas[rendering="true"] .text-link {
+	color: white !important;
+}
+
+
+tabbox, tabpanels, tabpanel {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+#canvas[eva="true"] {
+	background: black !important;
+	color: white !important;
+	font-family:
+		"ƒŠƒ…ƒEƒ~ƒ“U-KL"
+		"ƒŠƒ…ƒEƒ~ƒ“H-KL"
+		"ƒ}ƒeƒBƒX-EB"
+		"RFƒtƒ@ƒCƒ“-ME"
+		"‚c‚g‚o‹É‘¾–¾’©‘Ì"
+		"‚c‚e‚o‹É‘¾–¾’©‘Ì"
+		"DHPMincho UB"
+		"DFPMincho UB"
+		"AR P–¾’©‘ÌU"
+		"Arphic PMincho Ultra JIS"
+		"AR–¾’©‘ÌU"
+		"Arphic Mincho Ultra JIS"
+		"HGP•½¬–¾’©‘ÌW9"
+		"HGPHeiseiMinchotaiW9"
+		"HGS•½¬–¾’©‘ÌW9"
+		"HGSHeiseiMinchotaiW9"
+		"HG•½¬–¾’©‘ÌW9"
+		"HGHeiseiMinchotaiW9"
+		serif !important;
+}
+#canvas[eva="true"] .link-text {
+	color: red !important;
+	text-decoration: none !important;
+}
+#canvas[eva="true"] .link-text:hover {
+	color: pink !important;
+}
+#canvas[eva="true"] .link-text:active {
+	color: orange !important;
+}
+#canvas[rendering="true"] *,
+#canvas[rendering="true"] .text-link {
+	color: black !important;
+}
+
+
+
+
+#canvasToolbar {
+	position: relative;
+}
+
