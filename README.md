@@ -6,4 +6,4 @@
 - [zshrc入門](http://ir77.github.io/LT_Slide/zshrc入門/takahashi_method.html)
 - [Mac向けオススメ設定](http://ir77.github.io/LT_Slide/MacSetting/takahashi_method.html)
 - [Swift入門](http://ir77.github.io/LT_Slide/swift入門/takahashi_method.html)
-- [Inbox](http://ir77.github.io/LT_Slide/Inbox/takahashi_method.html)
+- [Inbox入門](http://ir77.github.io/LT_Slide/Inbox/takahashi_method.html)
