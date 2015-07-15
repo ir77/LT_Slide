@@ -1,0 +1,179 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Ttile</title>
+<script>
+var gid = function(id){return document.getElementById(id)}
+var c_page = 0;
+var takahashi = function(){
+	var output = gid('result');
+	var page = gid('src_code').value.split("----");
+	if(!page[c_page]){
+		c_page = page.length-1;
+	}
+	gid("page_navi").innerHTML = (c_page+1) + "/" + page.length;
+	with(output.style){
+		fontSize = "10px";
+		display  = "inline";
+	}
+	output.innerHTML = page[c_page].
+		replace(/^[\r\n]+/g,"").replace(/[\r\n]+$/g,"").replace(/(\r\n|[\r\n])/g,"<br />");
+	var body_w = document.body.offsetWidth;
+	var body_h = document.body.offsetHeight;
+	var output_w = output.offsetWidth;
+	var new_fs = Math.ceil((body_w/output_w) * 8);
+	if(new_fs > 10000){return}
+	with(output.style){
+		fontSize = new_fs + "px";
+		display  = "block";
+	}
+	var output_h = output.offsetHeight;
+	if(output_h > body_h){
+		var new_fs = Math.ceil((body_h/output_h) * new_fs * 0.8);
+		with(output.style){
+			fontSize = new_fs + "px";
+			fontWeight = "bold"; 
+		}
+	}
+}
+var f = function(){
+	c_page++;
+	takahashi();
+}
+var b = function(){
+	c_page--;
+	if(c_page < 0){c_page = 0}
+	takahashi();
+}
+function keyPress(e) {
+	if(e.charCode==102){
+		f();
+	}else{
+		b();
+	}
+}
+document.addEventListener("keypress",keyPress,false);
+if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || 		navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+	 document.addEventListener("click",f,false);
+}
+
+</script>
+<script src='http://127.0.0.1:9001/js/socket.js'></script>
+<style  type="text/css">
+@font-face {
+font-family: myfont;
+src: url("../mplus-1p-black.ttf");
+}
+</style>
+</head>
+<body style="height:90%">
+<textarea style="visibility: hidden; width: 1px; height: 1px; " rows="3" cols="80" id="src_code">
+<!-- <font color="chocolate">文字色</font> -->
+<!-- <img src="./img/sample" width="70%" alt=""> -->
+<img src="./img/1.png" width="40%" alt="">
+----
+当たり前
+のことを
+言語化
+----
+<img src="./img/2.png" width="40%" alt="">
+----
+Trigger
+（きっかけ）
+----
+きっかけ
+・外的トリガー
+・内的トリガー
+----
+・外的トリガー
+広告
+口コミ
+通知
+----
+・内的トリガー
+精神的なもの
+ex. さみしさ
+----
+<img src="./img/2.png" width="40%" alt="">
+----
+Action
+（行動）
+----
+行動の要因
+・十分なモチベーション
+・十分な能力
+・トリガーの存在
+----
+<img src="./img/3.jpg" width="25%" alt="">
+----
+大事なことは
+<font color="red">簡易</font>にすること
+----
+・Twitterボタンの共有
+・Googleでの検索
+・Amazonでの購入
+----
+<img src="./img/2.png" width="40%" alt="">
+----
+Variable
+Reward
+（報酬）
+----
+報酬の種類
+・トライブ（社会的）
+・ハント（物理的）
+・セルフ（自己満足）
+----
+トライブ（社会的）
+・誰かと繋がる
+ex. Twitter
+ex. facebook
+ex. stackOverflow
+----
+ハント（物理的）
+・情報を追うこと
+ex. Twitter
+----
+セルフ（自己満足）
+・ToDoリスト
+・ジグソーパズル
+・100万のタマゴ
+----
+<img src="./img/2.png" width="40%" alt="">
+----
+Investment
+（投資）
+----
+認知的
+不協和
+の回避
+----
+ex.
+IKEA
+----
+使えば
+使うほど
+好きになる
+----
+ex.
+Twitter
+----
+応用
+----
+電卓
+アプリ
+----
+<img src="./img/2.png" width="40%" alt="">
+----
+お
+わ
+り
+</textarea>
+<span id="page_navi"></span>
+<center>
+<div style="font-size: 20px; font-family:myfont; font-weight:900; display: block;" id="result"></div>
+</center>
+
+<script>
+takahashi();
+</script>
+</body></html>
