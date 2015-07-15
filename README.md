@@ -10,3 +10,4 @@
 
 ## バイト先向けのLTスライドたち
 - [邪教Vim入門](http://ir77.github.io/LT_Slide/evil-vim/takahashi_method.html)
+- [Hooked](http://ir77.github.io/LT_Slide/hooked/takahashi_method.html)
